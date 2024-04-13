@@ -45,10 +45,6 @@ export default function Signup() {
 				<Link to='/login' >
 				<button className='button_cred'>Have An Account? Log In</button>
 				</Link>
-				{/* <div className="social">
-                    <div className="go"><i className="fab fa-google"></i> Google</div>
-                    <div className="fb"><i className="fab fa-facebook"></i> Facebook</div>
-                </div> */}
 			</form>
 		</div>
 	)

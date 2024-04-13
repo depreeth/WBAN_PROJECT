@@ -27,10 +27,10 @@ export default function Navbar() {
                         <form className="d-flex justify-content-end px-3" role="search">
                             <Link to="/login" >
 
-                                <button id={style.nav_btn_l} className={`btn btn-outline-success mx-4 text-light ${style.nav_btn} px-5`} type="submit">User</button>
+                                <button id={style.nav_btn_l} className={`btn btn-outline-success mx-4 text-light ${style.nav_btn} px-5`} type="submit">Login</button>
                             </Link>
-                            <Link to="/loginHos">
-                                <button id={style.nav_btn_r} className={`btn btn-outline-danger text-light ${style.nav_btn} px-5`} type="submit">Hospital</button>
+                            <Link to="/signup">
+                                <button id={style.nav_btn_r} className={`btn btn-outline-danger text-light ${style.nav_btn} px-5`} type="submit">Signup</button>
 
                             </Link>
                         </form>

@@ -16,11 +16,13 @@
     --small-font-size: 0.875rem;
   }
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: "Montserrat", sans-serif;
 }
@@ -29,7 +31,6 @@ html {
   background: url("MORRIS.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
   height: 700px;
   width: 100%;
   position: relative;

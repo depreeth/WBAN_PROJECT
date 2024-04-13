@@ -29,7 +29,7 @@ body {
   border-radius: 50%;
 }
 
-.shape:first-child {
+/* .shape:first-child {
   background: linear-gradient(#1845ad, #23a2f6);
   left: -80px;
   top: -80px;
@@ -39,7 +39,7 @@ body {
   background: linear-gradient(to right, #ff512f, #f09819);
   right: -30px;
   bottom: -80px;
-}
+} */
 
 .form_cred {
   height: 520px;
@@ -53,11 +53,11 @@ body {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(0, 69, 139, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  padding: 50px 35px;
+  padding: 40px 35px;
 }
 
 .form_cred_s {
-  height: 610px !important;
+  height: 660px !important;
   position: absolute;
   top: 50% !important;
   left: 70% !important;
@@ -73,20 +73,20 @@ body {
 }
 
 .form_cred h3 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
-  line-height: 40px;
+  line-height: 35px;
   text-align: center;
 }
 
 #signuphere {
-  line-height: 10px !important;
-  font-size: 28px !important;
+  line-height: 0px !important;
+  font-size: 26px !important;
 }
 
 .label_cred {
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -102,7 +102,7 @@ body {
 
 .input_cred {
   display: block;
-  height: 50px;
+  height: 40px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
@@ -117,11 +117,11 @@ body {
 }
 
 .button_cred {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 100%;
   background-color: #ffffff;
   color: #080710;
-  padding: 12px 0;
+  padding: 10px 0;
   font-size: 16px;
   font-weight: 600;
   border-radius: 5px;
@@ -137,36 +137,74 @@ body {
 }
 
 #login_img {
-  width: 26%;
+  width: 23%;
   position: absolute;
   top: 22%;
   left: 60%;
   border-radius: 50%;
 }
 
+#choice_back {
+  width: 78%;
+  height: 680px;
+  background-color: #c0fefc;
+  position: absolute;
+  left: 12.5%;
+  top: 12%;
+  /* text-align: center; */
+  border-radius: 7px;
+}
+
+#user_choice_img {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  /* position: absolute;
+	left: 14%;
+	top: 8%; */
+}
+#hospital_choice_img {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  /* position: absolute;
+	left: 14%;
+	top: 18%; */
+}
+
+.form-check {
+  /* cursor: pointer; */
+  width: 17% !important;
+}
+
+.check_div{
+	position: absolute;
+	left: 12%;
+	top: 6%;
+}
 /* .social {
-      margin-top: 30px;
-      display: flex;
-    }
-    
-    .social div {
-      background: red;
-      width: 150px;
-      border-radius: 3px;
-      padding: 5px 10px 10px 5px;
-      background-color: rgba(255, 255, 255, 0.27);
-      color: #eaf0fb;
-      text-align: center;
-    }
-    
-    .social div:hover {
-      background-color: rgba(255, 255, 255, 0.47);
-    }
-    
-    .social .fb {
-      margin-left: 25px;
-    }
-    
-    .social i {
-      margin-right: 4px;
-    } */
+			margin-top: 30px;
+			display: flex;
+		}
+		
+		.social div {
+			background: red;
+			width: 150px;
+			border-radius: 3px;
+			padding: 5px 10px 10px 5px;
+			background-color: rgba(255, 255, 255, 0.27);
+			color: #eaf0fb;
+			text-align: center;
+		}
+		
+		.social div:hover {
+			background-color: rgba(255, 255, 255, 0.47);
+		}
+		
+		.social .fb {
+			margin-left: 25px;
+		}
+		
+		.social i {
+			margin-right: 4px;
+		} */

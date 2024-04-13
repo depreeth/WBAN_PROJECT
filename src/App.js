@@ -6,6 +6,7 @@ import Login from './components/Login.mjs';
 import Signup from './components/Signup.mjs';
 import LoginHos from './components/LoginHos.mjs';
 import SignupHos from './components/SignupHos.mjs';
+import Choice from './components/Choice.mjs';
 
 import {
 	BrowserRouter as Router,
@@ -21,15 +22,16 @@ function App() {
 			<Router>
 				<Navbar />
 				<Routes>
-        <Route exact path='/home' element={<Home/>} />
+					<Route exact path='/home' element={<Home />} />
 					<Route exact path='/' element={<Carousel />} />
 					{/* <Route exact path="/" element={<Symptoms />} /> */}
 
-					<Route exact path='/signup' element={<Signup />} />
+					<Route exact path='/signup' element={<Choice />} />
+					{/* <Route exact path='/choice/signup' element={<Signup />} /> */}
 					<Route exact path="/login" element={<Login />} />
 
 					<Route exact path="/loginHos" element={<LoginHos />} />
-					<Route exact path="/signupHos" element={<SignupHos />} />
+					{/* <Route exact path="/signupHos" element={<SignupHos />} /> */}
 
 				</Routes>
 			</Router>
