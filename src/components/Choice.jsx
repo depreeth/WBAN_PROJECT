@@ -14,9 +14,7 @@ export default function Choice() {
 	const handleClick = (e) => {
 		sethos(e.target.value);
 	}
-	// const handleClick1 = (e) => {
-	// 	hos = 0;
-	// }
+
 	return (
 		<div id='choice_back'>
 			<div className='check_div'>
@@ -53,7 +51,7 @@ export default function Choice() {
 				<input className='input_cred mod_inp' type="text" placeholder="example@domain.com" id="mail" />
 
 				<label className='label_cred mod_lbl ' for="password">Password</label>
-				<input className='input_cred mod_inp' type="password" placeholder="* * * * *" id="password" />
+				<input className='input_cred mod_inp' type="password" placeholder="use a strong password" id="password" />
 
 				<button className='button_cred'>Sign Up</button>
 				<Link to='/login' >

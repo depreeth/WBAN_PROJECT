@@ -19,5 +19,4 @@ const TASchema = new Schema({
 });
 
 const TA = mongoose.model("TAvalues", TASchema);
-
 module.exports = TA;

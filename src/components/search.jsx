@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import SearchIcon from "@material-ui/icons/Search";
-import CloseIcon from "@material-ui/icons/Close";
 
 export default function SymptomsInput() {
   const [iconClick, setClick] = useState(false);
@@ -18,8 +16,8 @@ export default function SymptomsInput() {
         rows="3"
       />
       <div className="search-icons" onClick={handleClick}>
-        <SearchIcon className="search" />
-        <CloseIcon className="close" />
+        <i class="fa-solid fa-magnifying-glass" className="search"></i>
+        <i class="fa-solid fa-x" className="close"></i>
       </div>
     </form>
   );

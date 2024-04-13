@@ -6,6 +6,7 @@ import SymptomsInput from "./search";
 import Parameters from "./Parameters";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+// import '../css/styles.css';
 import Footer from "./footer";
 
 export default function Home() {

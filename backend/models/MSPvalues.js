@@ -28,5 +28,4 @@ const MSPSchema = new Schema({
 });
 
 const MSP = mongoose.model("MSPvalues", MSPSchema);
-
 module.exports = MSP;

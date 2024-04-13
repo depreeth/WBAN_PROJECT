@@ -15,11 +15,11 @@ export default function SignupHos() {
 				<label className='label_cred mod_lbl' for="username">Health Care Name</label>
 				<input className='input_cred mod_inp' type="text" placeholder="Email or Phone" id="username" />
 
-				<label className='label_cred mod_lbl' for="username">Date of Incorporation</label>
+				<label className='label_cred mod_lbl' for="id">HealthCare ID</label>
 				<input className='input_cred mod_inp' type="text" placeholder="DD/MM/YYYY" id="username" />
 
-				<label className='label_cred mod_lbl' for="username">Mail/Phone</label>
-				<input className='input_cred mod_inp' type="text" placeholder="Email or Phone" id="username" />
+				<label className='label_cred mod_lbl' for="email">E-Mail</label>
+				<input className='input_cred mod_inp' type="text" placeholder="Email" id="username" />
 
 				<label className='label_cred mod_lbl ' for="password">Password</label>
 				<input className='input_cred mod_inp' type="password" placeholder="***" id="password" />

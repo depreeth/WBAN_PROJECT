@@ -1,5 +1,4 @@
 import React from "react";
-import AddButton from "./button";
 
 export default function Symptom(props) {
   return (
@@ -9,13 +8,10 @@ export default function Symptom(props) {
           return (
             <div>
               <li key={index}>{organ}</li>
-              <AddButton />
             </div>
           );
         })}
       </ul>
-      {/* <p>{props.text[0]}</p>
-      <p>{props.text[1]}</p> */}
     </div>
   );
 }

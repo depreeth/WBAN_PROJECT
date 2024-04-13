@@ -1,17 +1,16 @@
 import './App.css';
 
-import Navbar from './components/Navbar.mjs';
-import Carousel from './components/Carousel.mjs';
-import Login from './components/Login.mjs';
-import Signup from './components/Signup.mjs';
-import LoginHos from './components/LoginHos.mjs';
-import SignupHos from './components/SignupHos.mjs';
-import Choice from './components/Choice.mjs';
+import Navbar from './components/Navbar.jsx';
+import Carousel from './components/Carousel';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import LoginHos from './components/LoginHos';
+import SignupHos from './components/SignupHos.jsx';
+import Choice from './components/Choice';
 
 import {
 	BrowserRouter as Router,
 	Route,
-	Link,
 	Routes
 } from 'react-router-dom';
 import Home from './components/Home';
@@ -24,14 +23,12 @@ function App() {
 				<Routes>
 					<Route exact path='/home' element={<Home />} />
 					<Route exact path='/' element={<Carousel />} />
-					{/* <Route exact path="/" element={<Symptoms />} /> */}
-
-					<Route exact path='/signup' element={<Choice />} />
-					{/* <Route exact path='/choice/signup' element={<Signup />} /> */}
+					<Route exact path='/signup' element={<Signup />} />
 					<Route exact path="/login" element={<Login />} />
 
 					<Route exact path="/loginHos" element={<LoginHos />} />
-					{/* <Route exact path="/signupHos" element={<SignupHos />} /> */}
+					<Route exact path="/signupHos" element={<SignupHos />} />
+					{/* <Route exact path='/signup' element={<Choice />} /> */}
 
 				</Routes>
 			</Router>
