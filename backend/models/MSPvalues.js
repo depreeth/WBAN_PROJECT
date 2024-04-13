@@ -12,19 +12,10 @@ const MSPSchema = new Schema({
     required:true,
     unique: true
   },
-  parameter: {
-    type: String,
-    required: true,
-    trim: true,
+  date: {
+    type: Date,
   },
-  value1: {
-    type: Number,
-    required: true,
-  },
-  value2: {
-    type: Number,
-    required: true,
-  },
+  
 });
 
 const MSP = mongoose.model("MSPvalues", MSPSchema);

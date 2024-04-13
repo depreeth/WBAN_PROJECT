@@ -90,5 +90,5 @@ const epkmufs = computeEPKmufs(Epkmud2Values, PKmu);
 
 module.exports = {
   Epkmud2Values,
-  epkmufs
+  epkmufs,
 };

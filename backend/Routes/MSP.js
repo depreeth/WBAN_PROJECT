@@ -1,18 +1,26 @@
-const express = require('express');
-const MSP = require('../models/MSPvalues');
-const bodyParser = require('body-parser').json();
-const router = express.Router()
+const MSP = require("../models/MSPvalues"); // Assuming this path is correct
+const express = require("express");
+const router = express.Router();
 
-router.post('/add',bodyParser, async(req, res)=>{
-    try {
-        const data = req.body
-        const ins = new MSP(data)
-        
-        const result = await ins.save()
-        res.send(result)
-    } catch (error) {
-        res.send(error)
-    }
-})
+// Middleware to parse JSON bodies
+router.use(express.json());
 
-module.exports = router
+router.post("/add", async (req, res) => {
+  try {
+    const { healthCareName, healthCareID, email, password } = req.body;
+    const ins = new MSP({
+      healthCareName,
+      healthCareID,
+      email,
+      password,
+    });
+
+    const result = await ins.save();
+    res.status(201).send(result);
+  } catch (error) {
+    console.error(error);
+    res.status(400).send(error);
+  }
+});
+
+module.exports = router;

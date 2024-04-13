@@ -9,12 +9,14 @@ const userRoutes = require('./Routes/User')
 const TARoutes = require('./Routes/TAentry')
 const homoRoutes = require('./Routes/Homo')
 const mspRoutes = require('./Routes/MSP')
+const detectRoutes = require('./Routes/Detection')
 
 app.use(cors())
 app.use('/api/user',userRoutes)
 app.use('/api/TA',TARoutes)
 app.use('/api/homo',homoRoutes)
-app.use('/api/msp',mspRoutes)
+app.use('/api/msp', mspRoutes)
+app.use('/api', detectRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
 

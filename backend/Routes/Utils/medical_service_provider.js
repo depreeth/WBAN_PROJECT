@@ -136,5 +136,5 @@ function encryptCs(CLs, ELs, CAs, EAs, N, T, publicKeyCS) {
 }
 
 module.exports = {
-  encryptCs,
+  encryptCs
 };
