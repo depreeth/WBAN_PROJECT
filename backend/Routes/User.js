@@ -16,7 +16,8 @@ router.post('/login',bodyParser,(req,res)=>{
     }
     else{
         User.find({email}).then(result=>{
-            if(result){
+            if (result) {
+                console.log(result);
                 const hashedpass = result[0].password
                 bcrypt.compare(password,hashedpass).then(data=>{
                     if (data) {

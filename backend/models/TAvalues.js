@@ -14,7 +14,6 @@ const TASchema = new Schema({
   },
   value2: {
     type: Number
-    // required: true,
   }
 });
 

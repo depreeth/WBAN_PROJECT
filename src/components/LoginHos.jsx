@@ -1,26 +1,38 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+let finaldata = 1;
 
 export default function LoginHos() {
-  const [healthCareId, setHealthCareId] = useState("");
+  const navigate = useNavigate()
+  const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevents the default form submission behavior
 
     // Replace 'http://your-api-url.com/login' with your actual API endpoint
-    const apiUrl = "http://your-api-url.com/login";
+    const apiUrl = "http://127.0.0.1:4000/api/mspauth/login";
 
     try {
+
       const response = await axios.post(apiUrl, {
-        healthCareId,
+        username,
         password,
       });
 
       // Handle the response here, e.g., storing tokens, navigating to another page, etc.
       console.log("Login successful:", response.data);
-      // navigate('/home'); // Uncomment this line if you have set up navigation
+
+      if (response.data.status === "Successfull") {
+        finaldata = response.data;
+        console.log({finaldata : finaldata})
+        navigate('/msp');
+      }// Uncomment this line if you have set up navigation
+      else {
+        alert("Incorrect Username or Password")
+      }
     } catch (error) {
       // Handle errors here, such as showing an error message to the user
       console.error(
@@ -39,15 +51,15 @@ export default function LoginHos() {
         <h3>Login Here</h3>
 
         <label className="label_cred" htmlFor="username">
-          Health Care ID
+          Username
         </label>
         <input
           className="input_cred"
           type="text"
           placeholder="Enter your ID"
           id="username"
-          value={healthCareId}
-          onChange={(e) => setHealthCareId(e.target.value)}
+          value={username}
+          onChange={(e) => setusername(e.target.value)}
         />
 
         <label className="label_cred" htmlFor="password">
@@ -63,7 +75,7 @@ export default function LoginHos() {
         />
 
         <button type="submit" className="button_cred">
-          Log In Hos
+          Log In to Hospital
         </button>
         <Link to="/signupHos">
           <button type="button" className="button_cred">
@@ -73,4 +85,9 @@ export default function LoginHos() {
       </form>
     </div>
   );
+}
+
+
+export function getData(){
+  return finaldata;
 }

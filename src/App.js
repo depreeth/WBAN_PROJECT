@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import LoginHos from './components/LoginHos';
 import SignupHos from './components/SignupHos.jsx';
 import Choice from './components/Choice';
+import MspHome from './components/MedicalServiceProvider/MspHome';
 
 import {
 	BrowserRouter as Router,
@@ -28,6 +29,7 @@ function App() {
 
 					<Route exact path="/loginHos" element={<LoginHos />} />
 					<Route exact path="/signupHos" element={<SignupHos />} />
+					<Route exact path="/msp" element={<MspHome />} />
 					{/* <Route exact path='/signup' element={<Choice />} /> */}
 
 				</Routes>

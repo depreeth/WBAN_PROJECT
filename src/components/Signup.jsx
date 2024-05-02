@@ -16,15 +16,15 @@ export default function Signup() {
     const apiUrl = "http://127.0.0.1:4000/api/user/signup";
 
     try {
+      console.log({Signup: username, email, password});
+      console.log("inside frontend")
       const response = await axios.post(apiUrl, {
         username,
         email,
         password,
       });
-      // console.log("User Signed In !!");
-      // navigate("/home");
-      
-      console.log("Signup successful:", response.data);
+      console.log(response.data)
+      console.log("User Signed In !!");
       navigate("/home");
     } catch (error) {
       console.error(
@@ -40,8 +40,7 @@ export default function Signup() {
         <img id="sign_img" src="signup.jpeg" alt="Sign Up" />
       </div>
       <form onSubmit={handleSubmit} className="form_cred form_cred_s">
-        <h3 id="signuphere">SignUp Here</h3>
-
+        {/* <h3 id="signuphere">SignUp Here</h3> */}
         <label className="label_cred mod_lbl" htmlFor="username">
           Username
         </label>

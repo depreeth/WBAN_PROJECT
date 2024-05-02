@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   background-color: #eeeeee;
 }
@@ -57,11 +58,11 @@ body {
 }
 
 .form_cred_s {
-  height: 660px !important;
+  height: 700px !important;
   position: absolute;
   top: 50% !important;
   left: 70% !important;
-  padding: 40px 35px;
+  padding: 5px 35px;
 }
 
 .form_cred * {
@@ -182,6 +183,24 @@ body {
 	left: 12%;
 	top: 6%;
 }
+
+.cont{
+  display: flex;
+  justify-content: space-between;
+}
+
+.formHospital{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.coordinates{
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
 /* .social {
 			margin-top: 30px;
 			display: flex;

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+// import {useHistory} from 'react-router-dom';
 
 export default function Login() {
+  // const history = useHistory();
   const navigate = useNavigate();
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +21,13 @@ export default function Login() {
         }
       );
       console.log("User Logged In");
-      navigate("/home");
+      if(response.data.status === "Successfull")
+      {
+        navigate('/home'); 
+      }// Uncomment this line if you have set up navigation
+      else{
+        alert("Incorrect Username or Password")
+      }
     } catch (error) {
       console.error(
         "Login error:",
@@ -30,6 +38,7 @@ export default function Login() {
 
   return (
     <div>
+    
       <div className="background">
         <img id="login_img" src="login.jpeg" alt="Login" />
       </div>

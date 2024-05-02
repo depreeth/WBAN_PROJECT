@@ -8,6 +8,10 @@ export default function Carousel() {
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className={`active ${style.slider_btn}`} aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" className={`${style.slider_btn}`} aria-label="Slide 2"></button>
+                    {/* <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" className={`${style.slider_btn}`} aria-label="Slide 3"></button> */}
+                    {/* <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" className={`${style.slider_btn}`} aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" className={`${style.slider_btn}`} aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" className={`${style.slider_btn}`} aria-label="Slide 6"></button> */}
                 </div>
                 <div className="carousel-inner mx-auto">
                     <div className="carousel-item active">

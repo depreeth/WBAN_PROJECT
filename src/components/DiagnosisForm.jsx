@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
 export default function DiagnosisForm(props) {
-  const [input, setInput] = useState();
-
-  function handleChange(event) {}
 
   return (
     <div className="diagnosis-card">
@@ -11,7 +8,6 @@ export default function DiagnosisForm(props) {
       <input
         type="number"
         className="diagnosis-input"
-        onChnage={handleChange}
       ></input>
     </div>
   );

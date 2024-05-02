@@ -12,6 +12,8 @@ export default function Symptom(props) {
           );
         })}
       </ul>
+      {/* <p>{props.text[0]}</p>
+      <p>{props.text[1]}</p> */}
     </div>
   );
 }

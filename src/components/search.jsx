@@ -16,8 +16,8 @@ export default function SymptomsInput() {
         rows="3"
       />
       <div className="search-icons" onClick={handleClick}>
-        <i class="fa-solid fa-magnifying-glass" className="search"></i>
-        <i class="fa-solid fa-x" className="close"></i>
+         <i className="fa-solid fa-magnifying-glass search" ></i>
+         <i className="fa-solid fa-x close"></i>
       </div>
     </form>
   );
