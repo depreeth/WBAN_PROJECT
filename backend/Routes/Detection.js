@@ -7,7 +7,8 @@ const {
   TreeNode,
   constructTree,
   findNodesInPath,
-  generateSetInRange,
+  helper,
+  selectItemsInRange,
   encodeArrayToTokens,
   findMatchingPair,
 } = require("./Utils/Detection_util.js");
@@ -17,7 +18,7 @@ const Parameters = require("./TAentry.js");
 router.post("/detect", bodyParser, (req, res) => {
   const secretKey = process.env.SECRET_KEY;
   const normal = process.env.NORMAL;
-  const n = 10;
+  const n = 16;
   let results = {};
 
   try {
@@ -31,8 +32,7 @@ router.post("/detect", bodyParser, (req, res) => {
         const root = constructTree(n);
         const nodesInPath = findNodesInPath(root, targetValueBinary);
         const valuesInPath = nodesInPath.map((node) => node.value);
-        const resultSet = generateSetInRange(
-          root,
+        const resultSet = selectItemsInRange(
           rangeStartBinary,
           rangeEndBinary
         );

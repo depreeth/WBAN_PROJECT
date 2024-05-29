@@ -47,25 +47,82 @@ function findNodesInPath(root, targetValue) {
   return nodesInPath;
 }
 
-function generateSetInRange(root, rangeStart, rangeEnd) {
-  const resultSet = new Set();
-  function traverse(node) {
-    if (!node) return;
-    const leftChildInRange =
-      node.left && node.left.value >= rangeStart && node.left.value <= rangeEnd;
-    const rightChildInRange =
-      node.right &&
-      node.right.value >= rangeStart &&
-      node.right.value <= rangeEnd;
-    if (leftChildInRange) resultSet.add(node.left.value);
-    if (rightChildInRange) resultSet.add(node.right.value);
-    traverse(node.left);
-    traverse(node.right);
+// function generateSetInRange(root, rangeStart, rangeEnd) {
+//   const resultSet = new Set();
+//   function traverse(node) {
+//     if (!node) return;
+//     const leftChildInRange =
+//       node.left && node.left.value >= rangeStart && node.left.value <= rangeEnd;
+//     const rightChildInRange =
+//       node.right &&
+//       node.right.value >= rangeStart &&
+//       node.right.value <= rangeEnd;
+//     if (leftChildInRange) resultSet.add(node.left.value);
+//     if (rightChildInRange) resultSet.add(node.right.value);
+//     traverse(node.left);
+//     traverse(node.right);
+//   }
+//   traverse(root);
+//   return Array.from(resultSet);
+// }
+// *****************************************************************
+const helper = (a, b) => {
+  if (!a || !b || !a.length || !b.length) {
+    return false;
   }
-  traverse(root);
-  return Array.from(resultSet);
+
+  if (a.length != b.length) {
+    return false;
+  }
+  // Check if the last element is not equal and rest are equal
+  for (let i = 0; i < a.length - 1; i++) {
+    if (a[i] != b[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+function selectItemsInRange(start, end) {
+  // 1. Create a list of all the nodes between start and end
+  let k = end.toString(2);
+  let len = k.length;
+  const list = [];
+  for (let i = start; i <= end; i++) {
+    let a = i.toString(2);
+    //append 0s and make all the elements of the same length as os start and end
+    while (a.length < len) {
+      a = "0" + a;
+    }
+    list.push(a);
+  }
+
+  // 2. Create the answer list
+  const ans = [list[0]];
+
+  // 3. Push each item of the list to the answer list
+  //    and pop both if the last element is not equal and rest are equal
+  for (let i = 1; i < list.length; i++) {
+    ans.push(list[i]);
+
+    if (ans.length < 2) {
+      continue;
+    }
+    let siblings = helper(ans[ans.length - 1], ans[ans.length - 2]); // Check if they are siblings
+    while (siblings) {
+      let a = ans.pop();
+      ans.pop();
+      ans.push(a.slice(0, -1)); // Add the parent
+
+      // Check for siblings again after popping
+      siblings = helper(ans[ans.length - 1], ans[ans.length - 2]);
+    }
+  }
+  return ans;
 }
 
+
+// *****************************************************************
 function encodeArrayToTokens(stringArray, secretKey) {
   return stringArray.map((str) => jwt.sign({ data: str }, secretKey));
 }
@@ -103,7 +160,8 @@ module.exports = {
   TreeNode,
   constructTree,
   findNodesInPath,
-  generateSetInRange,
+  helper,
+  selectItemsInRange,
   encodeArrayToTokens,
   xorStringMatch,
   findMatchingPair,
